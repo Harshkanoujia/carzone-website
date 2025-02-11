@@ -1,0 +1,41 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE-specific files
+.idea/
+.vscode/
+
+# Build output
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.swp
+
+# Test coverage output
+coverage/
+
+# Git-specific files
+.git/
+
+#picture
+public/picture/Rajeev Puri Sir.jpg
+public/picture/Rohit.jpeg
+public/picture/WhatsApp Image 2024-06-04 at 10.20.12_c34160ad.jpg
+public/picture/WhatsApp Image 2024-09-17 at 13.44.48_82188a43.jpg
