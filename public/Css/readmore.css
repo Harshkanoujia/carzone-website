@@ -31,7 +31,7 @@
 }
 
 #top {
-    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.7)30%, rgba(0, 0, 0, 0.7)30%), url(/picture/freight-shipping.jpg);
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.7)30%, rgba(0, 0, 0, 0.7)30%), url(../images/freight-shipping.jpg);
     padding-top: 10px;
     background-size: cover;
 }

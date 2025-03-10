@@ -1,9 +1,10 @@
-const express = require('express');
-const path = require('path');
-const { Admin, Customer } = require('./mongodb');
 require('dotenv').config();
+const path = require('path');
+const express = require('express');
+const { Admin, Customer } = require('./mongodb');
 
 const app = express();
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -12,8 +13,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Routes
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/Html/home.html'));
+    res.sendFile(path.join(__dirname, '../public/home.html'));
 });
+
 
 
 // Admin Signup
@@ -41,7 +43,6 @@ app.post('/admin/signup', async (req, res) => {
     res.status(500).send('Internal server error');
   }
 });
-
 
 // Admin Signin
 app.post('/admin/signin', async (req, res) => {
@@ -99,7 +100,6 @@ app.post('/customer/signup1', async (req, res) => {
   }
 });
 
-
 // Customer Signin
 app.post('/customer/signin1', async (req, res) => {
   try {
@@ -124,10 +124,12 @@ app.post('/customer/signin1', async (req, res) => {
 });
 
 
+
 // Catch-all route to handle SPA routing
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../public/Html', '/Html/home.html'));
-// });
+app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../public/html', '../home.html'));
+    res.status(404).send({ statusCode: 404, message: "Failure", Error: "Route Not found" });
+});
 
 // Start the server
 const PORT = process.env.PORT || 8080;
