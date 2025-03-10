@@ -1,36 +1,6 @@
 # Node.js dependencies
 node_modules/
 
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Environment variables
-.env
-
-# OS-specific files
-.DS_Store
-Thumbs.db
-
-# IDE-specific files
-.idea/
-.vscode/
-
-# Build output
-dist/
-build/
-
-# Temporary files
-*.tmp
-*.swp
-
-# Test coverage output
-coverage/
-
 #images
 public/images/Rajeev Puri Sir.jpg
 public/images/Rohit.jpeg
