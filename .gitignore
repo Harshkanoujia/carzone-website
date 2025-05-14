@@ -1,10 +1,4 @@
 # Node.js dependencies
 node_modules/
 
-#images
-public/images/Rajeev Puri Sir.jpg
-public/images/Rohit.jpeg
-public/images/WhatsApp Image 2024-06-04 at 10.20.12_c34160ad.jpg
-public/images/WhatsApp Image 2024-09-17 at 13.44.48_82188a43.jpg
-
 .env
