@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
 require('dotenv').config();
+const mongoose = require('mongoose');
+mongoose.set('debug', true);
 
 
 // Connect to MongoDB

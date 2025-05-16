@@ -1,7 +1,7 @@
 require('dotenv').config();
 const path = require('path');
 const express = require('express');
-const { Admin, Customer } = require('./mongodb');
+const { Admin, Customer } = require('./src/mongodb');
 
 const app = express();
 
@@ -9,11 +9,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Serve static files
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname)));              // For index.html
+app.use(express.static(path.join(__dirname, 'public')));    // For CSS, images, HTML
 
 // Routes
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/home.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 
@@ -70,7 +71,7 @@ app.post('/admin/signin', async (req, res) => {
 
 
 // Customer Signup
-app.post('/customer/signup1', async (req, res) => {
+app.post('/customer/signup', async (req, res) => {
   try {
     const { name, dob, phoneNo, email, password, confirmPassword } = req.body;
 
@@ -101,10 +102,11 @@ app.post('/customer/signup1', async (req, res) => {
 });
 
 // Customer Signin
-app.post('/customer/signin1', async (req, res) => {
+app.post('/customer/signin', async (req, res) => {
   try {
+     console.log(req.body);
     const { email, password } = req.body;
-
+    console.log(email, password);
     // Validate input
     if (!email || !password) {
       return res.status(400).send('Email and password are required');
@@ -124,12 +126,13 @@ app.post('/customer/signin1', async (req, res) => {
 });
 
 
-
 // Catch-all route to handle SPA routing
 app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../public/html', '../home.html'));
+//   res.sendFile(path.join(__dirname, '../public/html', './index.html'));
     res.status(404).send({ statusCode: 404, message: "Failure", Error: "Route Not found" });
 });
+
+
 
 // Start the server
 const PORT = process.env.PORT || 8080;
